@@ -5,7 +5,7 @@
     --alt-color: #254f27;
     --sec-padding: 80px;
     --main-transition: 0.5s;
-    --trans-color: #254f272e;
+    --trans-color: #d6e5d8;
 }
 * {
     margin: 0;
@@ -46,6 +46,18 @@ body {
   }
 /* end global rules */
 /* start header */
+.header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.113);
+    z-index: 999;
+}
+@media (max-width: 767px) {
+    .header {
+        position: relative;
+    }
+}
 .header .container {
     display: flex;
     justify-content: space-between;
@@ -119,19 +131,6 @@ body {
 .header .container ul li:not(:last-of-type):hover::before {
     bottom: 10px;
 }
-/* .header .container ul li:not(:last-of-type)::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: -100px;
-    width: 100%;
-    height: 2px;
-    background-color: var(--main-color);
-    transition: 0.5s;
-}
-.header .container ul li:not(:last-of-type):hover::after {
-    right: 0;
-} */
 @media (max-width: 767px) {
     .header .container ul li:not(:last-of-type) {
         padding: 25px;
@@ -163,9 +162,10 @@ body {
 /* end header */
 /* start landing */
 .landing {
-    padding-top: var(--sec-padding);
-    padding-bottom: var(--sec-padding);
+    padding-top: 20px;
+    padding-bottom: 20px;
     min-height: calc(100vh - 97px);
+    display: flex;
 }
 .landing .container {
     display: flex;
@@ -178,7 +178,7 @@ body {
     }
 }
 .landing .container .text {
-    width: 350px;
+    flex-basis: 50%;
 }
 @media (max-width: 991px) {
     .landing .container .text {
@@ -195,7 +195,14 @@ body {
 .landing .container .text h1 {
     font-weight: 600;
     margin-bottom: 15px;
-    font-size: 45px;
+    font-size: 50px;
+    width: 350px;
+}
+@media (max-width: 991px) {
+    .landing .container .text h1 {
+        font-size: 40px;
+        margin: 0 auto 20px;
+    }
 }
 .landing .container .text h1 span {
     color: var(--main-color);
@@ -231,9 +238,13 @@ body {
     }
 } 
 .landing .container .images img {
-    width: 90%;
+    width: 98%;
     border-radius: 15px;
-    border: 8px solid #d2f5d4;
+    border: 3px solid #d2f5d4;
+    transition: var(--main-transition);
+}
+.landing .container .images img:hover {
+    transform: scale(1.1);
 }
 .landing .container .images .l-image {
     flex-basis: 50%;
@@ -445,7 +456,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: 0.4s;
+    transition:var(--main-transition);
     border-radius: 10px;
     z-index: -1;
 }
@@ -798,6 +809,7 @@ body {
 .book {
     padding-top: var(--sec-padding);
     padding-bottom: var(--sec-padding);
+    background-color: #f5fff5;
 }
 .book .container {
     display: flex;
@@ -817,13 +829,29 @@ body {
     background-color: var(--trans-color);
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-    border-radius: 10px;
+    margin-bottom: 20px;;
     transition: var(--main-transition);
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
 }
 .book .container .cards .box:hover {
-    transform: rotateY(20deg);
-    box-shadow: -22px 0px 12px -8px #00000033;
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.099);
+}
+.book .container .cards .box:hover::before {
+    right: -1px;
+}
+.book .container .cards .box::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #587c59;
+    top: 0;
+    right: -600px;
+    transition: 0.8s;
+    border-radius: 10px;
 }
 @media (max-width: 767px) {
     .book .container .cards .box {
@@ -833,6 +861,7 @@ body {
 .book .container .cards .box .info {
     padding: 0;
     margin-left: 20px;
+    position: relative;
 }
 .book .container .cards .box .info h3 {
     font-weight: 500;
@@ -881,6 +910,7 @@ body {
 .book img {
     width: 200px;
     border-radius: 10px;
+    position: relative;
 }
 @media (max-width: 767px) {
     .book img{
@@ -1033,7 +1063,6 @@ body {
 /* end join */
 .footer {
     padding-top: var(--sec-padding);
-    padding-bottom: var(--sec-padding);
     background-color: #d7edd7;
 }
 .footer .container {
