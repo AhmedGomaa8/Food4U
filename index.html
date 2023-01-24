@@ -10,6 +10,8 @@
     <title>Food4U</title>
 </head>
 <body>
+    <div class="scroller"></div>
+    <i class="fa-solid fa-arrow-up up"></i>
     <!-- start header -->
     <div class="header">
         <div class="container">
@@ -20,34 +22,35 @@
             </div>
             <div class="links">
                 <i class="menu fa-solid fa-bars"></i>
-                <ul>
+                <ul id="slide-ul">
+                    <i class="x-mark fa-solid fa-xmark"></i>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#Menu">Menu</a></li>
+                    <li><a href="#menu">Menu</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li class="btn"><a href="#">Book Table</a></li>
                 </ul>
-            </div>       
+            </div>      
         </div>
     </div>
     <!-- end header -->
     <!-- start landing -->
-    <div class="landing">
+    <div class="landing" id="home">
         <div class="container">
             <div class="text">
-                <h1>The <span>Flavor</span> of Tradition</h1>
-                <p>
+                <h1 class="slide-in left">The <span>Flavor</span> of Tradition</h1>
+                <p class="slide-in left">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid consectetur qui labore accusamus officiis dolore quis quia dolor
                 </p>
-                <a href="#">Explore Menu</a>
+                <a class="slide-in-last left-last" href="#">Explore Menu</a>
             </div>
             <div class="images">
-                <div class="r-image">
-                    <img src="images/pexels-jonathan-borba-3622476.jpg" alt="">
+                <div class="r-image slide-in right">
+                    <img src="images/photo.jpg" alt="">
                 </div>
-                <div class="l-image">
-                    <img src="images/photo1.jpg" alt="">
+                <div class="l-image slide-in right">
                     <img src="images/photo2.jpg" alt="">
+                    <img src="images/photo3.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -56,7 +59,7 @@
     <!-- start info -->
     <div class="info">
         <div class="container">
-            <div class="box">
+            <div class="box fade-in">
                 <i class="fa-solid fa-clock"></i>
                 <span class="head">
                     10 AM - 7 PM
@@ -65,7 +68,7 @@
                     Opening Hour
                 </span>
             </div>
-            <div class="box">
+            <div class="box fade-in">
                 <i class="fa-solid fa-location-dot"></i>
                 <span class="head">
                     Cairo
@@ -74,7 +77,7 @@
                     Address
                 </span>
             </div>
-            <div class="box">
+            <div class="box fade-in">
                 <i class="fa-solid fa-phone-volume"></i>
                 <span class="head">
                     +0123456789
@@ -88,11 +91,11 @@
     <!-- end info -->
     <!-- start specials -->
     <div class="specials">
-        <div class="container">
+        <div class="container fade-in">
             <div class="box">
                 <img src="images/bowl1.jpg" alt="">
                 <div class="info">
-                    <h3>Sweet Potato Bowl</h3>
+                    <h3 >Sweet Potato Bowl</h3>
                     <span>$18</span>
                     <div class="rate">
                         <i class="active fa-solid fa-star"></i>
@@ -215,27 +218,9 @@
         </div>
     </div>
     <!-- end discount -->
-    <!-- start contact -->
-    <div class="contact">
-        <div class="container">
-            <div class="image">
-                <img src="images/contact.webp" alt="">
-            </div>
-            <div class="form">
-                <h2>Contact Us</h2>
-                <form action="">
-                    <input class="input" type="text" name="text" placeholder="Your Name">
-                    <input class="input" type="email" name="email" placeholder="Your Email">
-                    <input class="input" type="text" name="number" placeholder="Phone">
-                    <textarea class="input" name="message" placeholder="Message"></textarea>
-                    <input type="submit" value="Send">
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- end contact -->
+    
     <!-- start servics -->
-    <div class="servics">
+    <div class="servics" id="about">
         <div class="container">
             <div class="text">
                 <h2>Why Choose Our Food</h2>
@@ -263,7 +248,26 @@
             </div>
         </div>
     </div>
-    <!-- start servics -->
+    <!-- end servics -->
+    <!-- start contact -->
+    <div class="contact" id="contact">
+        <div class="container">
+            <div class="image">
+                <img src="images/contact.webp" alt="">
+            </div>
+            <div class="form">
+                <h2>Contact Us</h2>
+                <form action="">
+                    <input class="input" type="text" name="text" placeholder="Your Name">
+                    <input class="input" type="email" name="email" placeholder="Your Email">
+                    <input class="input" type="text" name="number" placeholder="Phone">
+                    <textarea class="input" name="message" placeholder="Message"></textarea>
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end contact -->
     <!-- start book -->
     <div class="book">
         <div class="container">
@@ -302,8 +306,15 @@
         <div class="container">
             <h2>What Our Customers Say</h2>
             <div class="content">
+                <div class="slider-controls">
+                    <i id="prev" class="fa-solid fa-arrow-left left-arrow "></i>
+                    <div id="ul-div" class="ul-div">
+                        
+                    </div>
+                    <i id="next" class="fa-solid fa-arrow-right right-arrow"></i>
+                </div>
                 <div class="box">
-                    <img src="images/person.jpg" alt="">
+                    <img src="images/person1.jpg" alt="">
                     <div class="text">
                         <h4>Customer Name</h4>
                         <div class="rate">
@@ -311,7 +322,7 @@
                             <i class="active fa-solid fa-star"></i>
                             <i class="active fa-solid fa-star"></i>
                             <i class="active fa-solid fa-star"></i>
-                            <i class="active fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
                             <q>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptatum tempore corporis maiores, earum accusamus quaerat hic sunt, nostrum nesciunt voluptas temporibus libero
                             </q>
@@ -319,7 +330,7 @@
                     </div>
                 </div>
                 <div class="box">
-                    <img src="images/person.jpg" alt="">
+                    <img src="images/person2.jpg" alt="">
                     <div class="text">
                         <h4>Customer Name</h4>
                         <div class="rate">
@@ -329,39 +340,70 @@
                             <i class="active fa-solid fa-star"></i>
                             <i class="active fa-solid fa-star"></i>
                             <q>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptatum tempore corporis maiores, earum accusamus quaerat hic sunt, nostrum nesciunt voluptas temporibus libero
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus rerum molestias placeat optio nihil aliquam ipsum, similique a odit provident. Rerum, earum quae. Dolorum consequatur error, facere 
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="images/person3.jpg" alt="">
+                    <div class="text">
+                        <h4>Customer Name</h4>
+                        <div class="rate">
+                            <i class="active fa-solid fa-star"></i>
+                            <i class="active fa-solid fa-star"></i>
+                            <i class="active fa-solid fa-star"></i>
+                            <i class="active fa-solid fa-star"></i>
+                            <i class=" fa-solid fa-star"></i>
+                            <q>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptatum tempore corporis maiores, earum accusamus quaerat hic sunt
                             </q>
                         </div>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="images/person.jpg" alt="">
+                    <img src="images/person4.jpg" alt="">
                     <div class="text">
                         <h4>Customer Name</h4>
                         <div class="rate">
                             <i class="active fa-solid fa-star"></i>
                             <i class="active fa-solid fa-star"></i>
                             <i class="active fa-solid fa-star"></i>
-                            <i class="active fa-solid fa-star"></i>
-                            <i class="active fa-solid fa-star"></i>
+                            <i class=" fa-solid fa-star"></i>
+                            <i class=" fa-solid fa-star"></i>
                             <q>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptatum tempore corporis maiores, earum accusamus quaerat hic sunt, nostrum nesciunt voluptas temporibus libero
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptatum tempore corporis maiores
                             </q>
                         </div>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="images/person.jpg" alt="">
+                    <img src="images/person5.jpg" alt="">
                     <div class="text">
                         <h4>Customer Name</h4>
                         <div class="rate">
                             <i class="active fa-solid fa-star"></i>
                             <i class="active fa-solid fa-star"></i>
                             <i class="active fa-solid fa-star"></i>
-                            <i class="active fa-solid fa-star"></i>
-                            <i class="active fa-solid fa-star"></i>
+                            <i class=" fa-solid fa-star"></i>
+                            <i class=" fa-solid fa-star"></i>
                             <q>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptatum tempore corporis maiores, earum accusamus quaerat hic sunt, nostrum nesciunt voluptas temporibus libero
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptatum tempore corporis maiores
+                            </q>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="images/person6.jpg" alt="">
+                    <div class="text">
+                        <h4>Customer Name</h4>
+                        <div class="rate">
+                            <i class="active fa-solid fa-star"></i>
+                            <i class="active fa-solid fa-star"></i>
+                            <i class="active fa-solid fa-star"></i>
+                            <i class=" fa-solid fa-star"></i>
+                            <i class=" fa-solid fa-star"></i>
+                            <q>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis nisi illo quibusdam temporibus provident amet inventore quaerat est, ad fugiat necessitatibus nesciunt earum odio ab dolor? Quos tempora temporibus architecto!
                             </q>
                         </div>
                     </div>
@@ -432,6 +474,8 @@
         </div>
         <p class="bottom-text">Made By Snooze</p>
     </div>
+    
     <!-- end footer -->
+    <script src="script.js"></script>
 </body>
 </html>
